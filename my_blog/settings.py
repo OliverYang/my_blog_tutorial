@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-INSTALLED_APPS = (
+INSTALLED_DJANGO_MODEL = (
     'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,9 +40,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'article',
+
+)
+
+INSTALLED_PROJECT_MODEL = (
+    'my_blog.app.article',
     'my_blog.app.account',
 )
+
+INSTALLED_APPS = INSTALLED_DJANGO_MODEL + INSTALLED_PROJECT_MODEL
 
 from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (

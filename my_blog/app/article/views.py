@@ -8,8 +8,7 @@ from django.contrib.syndication.views import Feed
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from article.models import Article
-from article.models import Tag
+from my_blog.app.article.models import Article, Tag
 
 from datetime import datetime
 
@@ -26,6 +25,7 @@ def home(request):
     except EmptyPage :
         post_list = paginator.paginator(paginator.num_pages)
     return render(request, 'home.html', {'post_list' : post_list})
+
 
 def detail(request, id):
     try:

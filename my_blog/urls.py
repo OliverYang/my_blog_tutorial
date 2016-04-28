@@ -2,22 +2,39 @@
 
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from article.views import RSSFeed
+from my_blog.app.article.views import RSSFeed
 
 urlpatterns = patterns('my_blog.app.article.views',
-    # Examples:
-    # url(r'^$', 'my_blog.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+   # Examples:
+   # url(r'^$', 'my_blog.views.home', name='home'),
+   # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'home', name = 'home'),
-    url(r'^(?P<id>\d+)/$', 'detail', name='detail'),
-    url(r'^archives/$', 'archives', name = 'archives'),
-    url(r'^aboutme/$', 'about_me', name = 'about_me'),
-    url(r'^tag/(?P<tag>\w+)/$', 'search_tag', name = 'search_tag'),
-    url(r'^search/$','blog_search', name = 'search'),
-    url(r'^feed/$', RSSFeed(), name = "RSS"),
-)
+   url(r'^admin/', include(admin.site.urls)),
+   url(r'^$', 'home', name='home'),
+   url(r'^(?P<id>\d+)/$', 'detail', name='detail'),
+   url(r'^archives/$', 'archives', name='archives'),
+   url(r'^aboutme/$', 'about_me', name='about_me'),
+   url(r'^tag/(?P<tag>\w+)/$', 'search_tag', name='search_tag'),
+   url(r'^search/$', 'blog_search', name='search'),
+   url(r'^feed/$', RSSFeed(), name="RSS"),
+    )
+
+urlpatterns += patterns('my_blog.app.account.views',
+
+    url(r'^user/$', 'view_user', name='view_user'),
+    url(r'^user/add/$', 'add_user', name='add_user'),
+
+    )
+
+
+
+
+
+
+
+
+
+
 
 
 """

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from article.models import Article
-from article.models import Tag
+from my_blog.app.article.models import Article, Tag
+
 
 # Register your models here.
 class ArticleAdmin(admin.ModelAdmin):
