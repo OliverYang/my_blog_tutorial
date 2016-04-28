@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
+    'my_blog.app.account',
 )
 
 from django.conf import global_settings
@@ -49,7 +50,7 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 )
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
-
+AUTH_USER_MODEL = 'account.CustomerUser'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

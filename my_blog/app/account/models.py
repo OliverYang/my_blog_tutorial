@@ -41,6 +41,10 @@ class CustomerUser(AbstractBaseUser, PermissionsMixin):
     create_date = models.DateTimeField(_('Create Date'), help_text=_('User account create date'),
                                        default=timezone.now())
 
+    objects = CustomerUserManager()
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
     def get_username(self):
         return self.nickname
 
